@@ -21,6 +21,7 @@ header{
 }
 
 .menu-vertical{
+    display: block;
     position: fixed;
     left: 0;
     background-color: black;
@@ -71,13 +72,20 @@ h2{
  }
 
  .btn-head span{
-    font-size: 10px;
+    font-weight: bold;
+    font-size: 12px;
     color: white;
     border: 2px solid white;
     border-radius: 50px;
     padding:11px 40px 10px 40px;
     margin-right: 20px;
  }
+
+ .btn-head span:hover{
+    background-color: greenyellow;
+    color: black;
+    padding: 15px 45px 14px 45px;
+}
  
 /**************************
         MENU VERTICAL 
@@ -156,12 +164,12 @@ h2{
 .name-playlist nav ul li{
     color:#4D4D4D ;
     list-style: none;
-    padding-top: 15px;
+    line-height: 35px;
     font-size: 14px;
 }
 
 .internal-inferior{
-    margin-top: 325px;
+    margin-top: 255px;
 }
 
 .internal-inferior .user{
@@ -173,13 +181,99 @@ h2{
     width: 8%;
 }
 
+.user span{
+    color: white;
+}
+
 .internal-inferior .download{
     color:#4D4D4D ;
     font-size: 12px;
     padding-bottom: 5px;
 }
 
+/**************************
+    HIDDEN MENU VERTICAL 
+ *************************/
+ .hidden-menu {
+    display: none;
+    background-color: black;
+    width: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 80px;
+    height: 100%;
+}
+  
+  .hidden-menu .small-logo {
+    filter: invert(0);
+    object-fit: cover;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    width: 70%;
+    margin-left: 8px;
+}
+  
+  .hidden-menu .smart-menu {
+    width: 70%;
+    margin-left: 8px;
+}
+  
+  .hidden-menu .download {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+  
+  .hidden-menu .user img{
+    width: 60%;
+    background-color: gray;
+    border-radius: 50%;
+}
+/* ----- VERTICAL MENU HOVER----- */
+.hidden-menu .small-logo img:hover{
+    filter: invert(27%) sepia(99%) saturate(5354%) 
+    hue-rotate(116deg) brightness(92%) contrast(108%);
+}
 
+.logo img:hover{
+    filter: invert(27%) sepia(99%) saturate(5354%) 
+    hue-rotate(116deg) brightness(92%) contrast(108%);
+}
+
+.home span:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.home i:hover{
+    border-left: 1px solid greenyellow;
+}
+
+.search span:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.library span:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.create-playlist span:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.create-playlist i:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.name-playlist li:hover{
+    cursor: pointer;
+    color: white;
+    padding-left: 10px;
+    border-left: 1px solid greenyellow;
+}
 /**************************
           MAIN 
  *************************/
@@ -248,6 +342,13 @@ h3{
     border-radius: 50%;
  }
 
+ /* ----- MAIN HOVER ----- */
+.evidence-menu li:hover{
+    color: white;
+    border-bottom:3px solid greenyellow ;
+}
+
+
  /**************************
           FOOTER
  *************************/
@@ -270,16 +371,17 @@ h4{
 .foot-left .bottom-left{
     display: flex;
     align-items: center;
-
 }
 
 .foot-left .bottom-left img{
-    width: 10%;
+    width: 50px;
+    height: 40px;
     padding-left: 10px;
  }
 
 .title-song{
     padding-left: 10px;
+    line-height: 13px;
 }
 
 .title-song span{
@@ -297,33 +399,128 @@ h4{
 /* ----- FOOTER CENTRAL ----- */
 .foot-central{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 50%;
- }
+}
+.center-top{
+    padding-bottom: 14px;
+}
 
+.center-top ul li{
+    display: inline;
+    font-style: none;
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.line-central{
+    position: relative;
+    height: 4px;
+    width: 550px;
+    background-color: #6E7075;
+    border-radius: 30px;
+    margin: 0 10px;
+}
+
+.line-central::before{
+    position: absolute;
+    z-index: 999;
+    content: "";
+    background-color: white;
+    border-radius: 30px;
+    height: 4px;
+    width: 250px;
+}
+.center-down{
+    display: flex;
+    align-items: center;
+}
+.center-down span{
+    color: white;
+    font-size:12px ;
+}
 
 
 
 /* ----- FOOTER RIGHT ----- */
 .foot-right{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     width: 25%;
- }
+}
 
- .icon-right{
+.icon-right{
+    display: flex;
     color: #6E7075;
- }
+}
 .icon-right i{
     padding-left: 15px;
+}
+
+.line-right{
+    position: relative;
+    height: 4px;
+    width: 150px;
+    border-radius: 30px;
+    background-color: #6E7075;
+    margin: 0 10px;
+}
+
+.line-right::before{
+    position: absolute;
+    z-index: 999;
+    content: "";
+    border-radius: 30px;
+    background-color: white;
+    height: 3px;
+    width: 35px;
+}
+.icon-right .line-r{
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+ /**************************
+     GENERAL RESPONSIVE
+ *************************/
+ @media screen and (max-width:1200px){
+    .row{
+        flex-wrap: wrap;
+    }
+
+    .row .card{
+        width: calc(100% / 5);
+    }
  }
 
-/* .line-grey{
-    border: 2px solid #6E7075;
-    border-radius: 5%;
- } */
+ @media screen and (max-width:780px){
+    .row .card{
+        width: calc(100% / 3);
+    }
+ }
 
-/* .line-white{
-    border: 2px solid white;
-    border-radius: 5%;
- }  */
+ @media screen and (max-width:650px) {
+    .menu.menu-vertical {
+      display: none;
+    }
+  
+    .hidden-menu {
+      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+  
+    header {
+      left: 50px;
+    }
+  
+    header .btn {
+      margin-right: 60px;
+    }
+  }
